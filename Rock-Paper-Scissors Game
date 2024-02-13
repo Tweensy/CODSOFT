@@ -1,0 +1,32 @@
+import random
+print("Type your answers in lower case")
+print("The rules are:")
+print("Rock beats scissors, scissors beat paper, and paper beats rock")
+
+while True:
+    userinput = input("Enter a choice (rock, paper, scissors): ")
+    choice = ["rock", "paper", "scissors"]
+    computer_choice = random.choice(choice)
+    print(f"\nYou chose {userinput}, computer chose {computer_choice}.\n")
+
+    if userinput == computer_choice:
+        print(f"Both players selected {userinput}. It's a tie!")
+    elif userinput == "rock":
+        if computer_choice == "scissors":
+            print("Rock smashes scissors! You win!")
+        else:
+            print("Paper covers rock! You lose.")
+    elif userinput == "paper":
+        if computer_choice == "rock":
+            print("Paper covers rock! You win!")
+        else:
+            print("Scissors cuts paper! You lose.")
+    elif userinput == "scissors":
+        if computer_choice == "paper":
+            print("Scissors cuts paper! You win!")
+        else:
+            print("Rock smashes scissors! You lose.")
+
+    replay = input("Play again? (y/n): ")
+    if replay.lower() != "y":
+        break
