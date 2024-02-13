@@ -1,0 +1,54 @@
+
+def add(a,b):
+    return a+b
+
+
+def sub(a,b):
+    return a-b
+
+
+def mul(a,b):
+    return a*b
+
+
+def div(a,b):
+    return a/b
+
+
+print("Select operation.")
+print("1.Add")
+print("2.Subtract")
+print("3.Multiply")
+print("4.Divide")
+
+while True:
+   
+    option = input("Enter choice(+/-/*//): ")
+
+    # check if choice is one of the four options
+    if option in ('+', '-', '*', '÷' ):
+        try:
+            n1 = float(input("Enter first number: "))
+            n2 = float(input("Enter second number: "))
+        except ValueError:
+            print("Invalid input. Please enter a number.")
+            continue
+
+        if option == '+':
+            print(n1, "+", n2, "=", add(n1, n2))
+
+        elif option == '-':
+            print(n1, "-", n2, "=", sub(n1, n2))
+
+        elif option == '*':
+            print(n1, "*", n2, "=", mul(n1, n2))
+
+        elif option == '÷':
+            print(n1, "/", n2, "=", div(n1, n2))
+        
+      
+        nextcalc= input("Let's do next calculation? (yes/no): ")
+        if nextcalc == "no":
+                   break
+    else:
+        print("Invalid Input")
